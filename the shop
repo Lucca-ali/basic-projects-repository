@@ -1,0 +1,52 @@
+uantidade=[0,0,0,0]#it makes a list of the quantity of the itens , it will update when the item is chosen.
+preco=[2.90,10.03,0.99,14]#it is the list of the price of the itens
+loja=True#it says that the store is open
+seuDinheiro=90.30#it shows the money you have
+dinheiro=0.0#how much u own the store
+
+def calculo_total():#
+    global dinheiro #it makes dinheiro global, so it can be used in all the code
+    dinheiro=(float (preco[0]*quantidade[0])+(preco[1]*quantidade[1])+(preco[2]*quantidade[2])+(preco[3]*quantidade[3]))
+    dinheiro=round(dinheiro,2)#makes the money just have 2 decimal numbers after the period
+    return dinheiro  # it returns the value of "dinheiro"
+
+
+
+
+if loja:
+    print("bem vindo a loja ,digite o numero do item de sua escolha:\n1-sedenta de sangue(2.90R$)\n2-bomba de hidrogênio(10.03R$)\n3-pelúcia de ursinho(0.99R$)\n4-elemento x(14.00R$)\n5-sair")#it shows the possibilites of what they u can buy and a welcome text
+
+
+else:
+    print("a loja está fechada, volte amanha.")#it is a text if the shop is closed
+
+while  loja and dinheiro<seuDinheiro : #if loja is true and u have more money than u own
+    try:
+        ai =int(input("\n"))#this is the number u chose to add to your list
+        if ai == 1:
+            quantidade[0]+=1
+            print("item adicionado ao carrinho,deseja continuar?")
+            calculo_total()
+        elif ai==2:
+            quantidade[1]+=1
+            print("item adicionado ao carrinho,deseja continuar?")
+            calculo_total()
+
+        elif ai==3:
+            quantidade[2]+=1
+            print("item adicionado ao carrinho,deseja continuar?")
+            calculo_total()
+        elif ai==4:
+            print("item adicionado ao carrinho,deseja continuar?")
+            quantidade[3]+=1
+            calculo_total()
+        elif ai==5:
+            print(f"obrigado por fazer negócios com a gente deu {dinheiro}R$, qual vai ser a forma de pagamento?")#a thank u text and shows how much money
+            break
+        else:
+            print("isso é uma opção invalida.") #it shows the option is invalid
+        if seuDinheiro<dinheiro:
+            print(f"voce não tem dinheiro amigo,o total é {dinheiro},como voce vai pagar?")#shows u don't have enough money
+    except ValueError:
+        print("numero invalido, digite um numero válido") #it is here because if u use anything but a number the code just stops with a error , it makes it continue even if I put a string.
+
