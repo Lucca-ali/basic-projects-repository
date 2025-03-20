@@ -3,15 +3,15 @@ while True:
         tempo=float(input("qual o tempo de sua aplicação em anos:"))#this is a input asking about the time(in years) of the application
         if tempo < 0:
             raise ValueError("negative numbers is invalid")#if the time is negative it shows a error sign
-        capitalaplicado=float(input("quanto foi o seu capital que você aplicou?:"))#how much capital u put in a aplication
-        if capitalaplicado< 0:
+        capital_aplicado=float(input("quanto foi o seu capital que você aplicou?:"))#how much capital u put in a aplication
+        if capital_aplicado< 0:
             raise ValueError #if the capital is less than 0 it will show a error sign
         taxa=float(input("qual a taxa de juros anual:"))#how much tax in a year
         if taxa < 0:
             raise ValueError #shows a error sign if it is less than zero
-        montante= capitalaplicado * (1+(taxa/100))**tempo #the calculus
-        Ttempo=(montante-capitalaplicado) #the tax in a time perior
-        print(f"o seu montante é {montante:.2f},e o juros foi de {Ttempo:.2f} em {tempo}anos")#the result ;D
+        montante= capital_aplicado * (1+(taxa/100))**tempo #the calculus
+        Ttempo=(montante-capital_aplicado) #the tax in a time period
+        print(f"o seu montante é R${montante:.2f},e o juros foi de {Ttempo:.2f} em {f"{tempo:.0f}" if tempo % 1== 0 else f"{tempo:2f}"} {'anos'if tempo>1 else 'ano'}")#the result ;D
         break#end the loop
     except ValueError:
         print("numero invalido,digite um numero valido pra continuar.")#error message
