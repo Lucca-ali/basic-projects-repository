@@ -1,1 +1,1 @@
-esse é o meu primeiro projeto criado.
+this the repository of my small projects
