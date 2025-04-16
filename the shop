@@ -1,4 +1,4 @@
-uantidade=[0,0,0,0]#it makes a list of the quantity of the itens , it will update when the item is chosen.
+quantidade=[0,0,0,0]#it makes a list of the quantity of the itens , it will update when the item is chosen.
 preco=[2.90,10.03,0.99,14]#it is the list of the price of the itens
 loja=True#it says that the store is open
 seuDinheiro=90.30#it shows the money you have
